@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="org.autojs.autojs">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.autojs.autojs">
 
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
-    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
 
     <!-- 非Auto.js运行必需，不会主动申请，某些脚本可以自行申请-->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <!-- Ad SDK Permissions -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        xmlns:tools="http://schemas.android.com/tools"
         android:name=".App"
         android:allowBackup="false"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:icon="@drawable/autojs_material"
         android:label="@string/_app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:label, android:icon, android:allowBackup">
+        tools:replace="android:label, android:icon, android:allowBackup, android:appComponentFactory">
 
         <activity
             android:name=".ui.splash.SplashActivity_"
@@ -38,9 +38,9 @@
             android:label="@string/_app_name"
             android:theme="@style/AppTheme.Splash">
             <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
 
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
@@ -48,16 +48,15 @@
             android:hardwareAccelerated="true"
             android:label="@string/_app_name"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme.FullScreen">
-        </activity>
+            android:theme="@style/AppTheme.FullScreen"></activity>
         <activity
             android:name=".external.shortcut.ShortcutActivity"
             android:taskAffinity="org.autojs.autojs.external.shortcut.ShortcutActivity"
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
@@ -68,50 +67,49 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
 
         <activity
             android:name=".ui.edit.EditActivity_"
             android:multiprocess="true"
-            android:theme="@style/EditorTheme">
-        </activity>
-        <activity android:name=".ui.settings.AboutActivity_"/>
+            android:theme="@style/EditorTheme"></activity>
+        <activity android:name=".ui.settings.AboutActivity_" />
         <activity
             android:name=".ui.settings.SettingsActivity_"
-            android:theme="@style/AppTheme.Settings"/>
-        <activity android:name=".ui.error.ErrorReportActivity"/>
-        <activity android:name=".external.tasker.TaskerScriptEditActivity_"/>
-        <activity android:name=".ui.edit.ViewSampleActivity"/>
+            android:theme="@style/AppTheme.Settings" />
+        <activity android:name=".ui.error.ErrorReportActivity" />
+        <activity android:name=".external.tasker.TaskerScriptEditActivity_" />
+        <activity android:name=".ui.edit.ViewSampleActivity" />
         <activity
             android:name=".ui.user.LoginActivity_"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.user.RegisterActivity_"
-            android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".ui.user.WebActivity_"/>
-        <activity android:name=".ui.build.BuildActivity_"/>
-        <activity android:name=".ui.log.LogActivity_"/>
-        <activity android:name=".ui.doc.DocumentationActivity_"/>
-        <activity android:name=".ui.shortcut.ShortcutIconSelectActivity_"/>
-        <activity android:name=".ui.timing.TimedTaskSettingActivity_"/>
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.user.WebActivity_" />
+        <activity android:name=".ui.build.BuildActivity_" />
+        <activity android:name=".ui.log.LogActivity_" />
+        <activity android:name=".ui.doc.DocumentationActivity_" />
+        <activity android:name=".ui.shortcut.ShortcutIconSelectActivity_" />
+        <activity android:name=".ui.timing.TimedTaskSettingActivity_" />
         <activity
             android:name=".ui.shortcut.ShortcutCreateActivity"
-            android:theme="@style/AppTheme.Transparent"/>
+            android:theme="@style/AppTheme.Transparent" />
         <activity android:name=".external.widget.ScriptWidgetSettingsActivity_">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
 
         <activity
             android:name=".ui.error.IssueReporterActivity"
-            android:theme="@style/IssueReporterTheme"/>
+            android:theme="@style/IssueReporterTheme" />
 
 
-        <service android:name=".external.ScriptExecutionIntentService"/>
+        <service android:name=".external.ScriptExecutionIntentService" />
 
-        <activity android:name=".external.tasker.TaskPrefEditActivity_"/>
+        <activity android:name=".external.tasker.TaskPrefEditActivity_" />
 
         <activity-alias
             android:name=".external.tasker.PluginActivity"
@@ -121,7 +119,7 @@
             android:targetActivity=".external.tasker.TaskPrefEditActivity_"
             tools:ignore="ExportedActivity">
             <intent-filter>
-                <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING"/>
+                <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING" />
             </intent-filter>
         </activity-alias>
 
@@ -133,7 +131,7 @@
 
             <!-- this Intent filter allows the plug-in to discovered by the host. -->
             <intent-filter>
-                <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING"/>
+                <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING" />
             </intent-filter>
         </receiver>
 
@@ -142,16 +140,16 @@
             android:icon="@drawable/autojs_material"
             android:label="@string/text_edit_script">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <action android:name="android.intent.action.EDIT"/>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="file"/>
-                <data android:scheme="content"/>
-                <data android:mimeType="application/x-javascript"/>
-                <data android:mimeType="text/plain"/>
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:mimeType="application/x-javascript" />
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
         <activity
@@ -161,16 +159,16 @@
             android:taskAffinity="org.autojs.autojs.external.open.RunIntentActivity"
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <action android:name="android.intent.action.EDIT"/>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="file"/>
-                <data android:scheme="content"/>
-                <data android:mimeType="application/x-javascript"/>
-                <data android:mimeType="text/plain"/>
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:mimeType="application/x-javascript" />
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
         <activity
@@ -179,16 +177,16 @@
             android:label="@string/text_import_script"
             android:theme="@style/AppTheme.Transparent">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <action android:name="android.intent.action.EDIT"/>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="file"/>
-                <data android:scheme="content"/>
-                <data android:mimeType="application/x-javascript"/>
-                <data android:mimeType="text/plain"/>
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:mimeType="application/x-javascript" />
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
 
@@ -197,12 +195,12 @@
             android:label="@string/_app_name"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
-                <action android:name="android.accessibilityservice.AccessibilityService"/>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
 
             <meta-data
                 android:name="android.accessibilityservice"
-                android:resource="@xml/accessibility_service_config"/>
+                android:resource="@xml/accessibility_service_config" />
         </service>
 
         <service
@@ -210,29 +208,29 @@
             android:label="@string/_app_name"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
-                <action android:name="android.service.notification.NotificationListenerService"/>
+                <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
         </service>
 
         <receiver android:name=".external.widget.ScriptWidget">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/script_widget_config"/>
+                android:resource="@xml/script_widget_config" />
         </receiver>
 
         <receiver android:name=".timing.TaskReceiver">
             <intent-filter>
-                <action android:name="com.stardust.autojs.action.task"/>
+                <action android:name="com.stardust.autojs.action.task" />
             </intent-filter>
         </receiver>
 
         <receiver android:name=".timing.TimedTaskScheduler">
             <intent-filter>
-                <action android:name="com.stardust.autojs.action.check_task"/>
+                <action android:name="com.stardust.autojs.action.check_task" />
             </intent-filter>
         </receiver>
 

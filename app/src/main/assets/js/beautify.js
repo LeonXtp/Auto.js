@@ -264,7 +264,7 @@ var Output = __webpack_require__(4).Output;
 var Tokenizer = __webpack_require__(7).Tokenizer;
 
 function remove_redundant_indentation(output, frame) {
-    // This implementation is effective but has some issues:
+    // This compile is effective but has some issues:
     //     - can cause line wrap to happen too soon due to indent removal
     //           after wrap points are calculated
     // These issues are minor compared to ugly indentation.

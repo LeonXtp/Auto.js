@@ -446,7 +446,7 @@ public class Main {
             }
             ShellConsole console = global.getConsole(cs);
             if (filename == null) {
-                // print implementation version
+                // print compile version
                 console.println(cx.getImplementationVersion());
             }
 

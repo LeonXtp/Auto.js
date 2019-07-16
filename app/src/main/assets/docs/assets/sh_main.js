@@ -470,7 +470,7 @@ function sh_getXMLHttpRequest() {
   else if (window.XMLHttpRequest) {
     return new XMLHttpRequest();
   }
-  throw 'No XMLHttpRequest implementation available';
+  throw 'No XMLHttpRequest compile available';
 }
 
 function sh_load(language, element, prefix, suffix) {

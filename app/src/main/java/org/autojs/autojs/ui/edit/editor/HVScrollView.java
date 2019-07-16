@@ -1369,7 +1369,7 @@ public class HVScrollView extends FrameLayout {
      * more careful not to give focus to something that is scrolled off screen.
      * <p>
      * This is more expensive than the default {@link android.view.ViewGroup}
-     * implementation, otherwise this behavior might have been made the default.
+     * compile, otherwise this behavior might have been made the default.
      */
     @Override
     protected boolean onRequestFocusInDescendants(int direction,
